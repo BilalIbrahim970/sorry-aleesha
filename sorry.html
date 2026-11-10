@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry Meri Jaan ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            animation: popUp 0.8s ease-in-out;
+        }
+
+        @keyframes popUp {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .bear-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px auto;
+        }
+
+        .bear-face {
+            width: 100px;
+            height: 90px;
+            background: #b5651d;
+            border-radius: 50% 50% 45% 45%;
+            position: absolute;
+            top: 15px;
+            left: 10px;
+            box-shadow: inset 0 -5px 0 rgba(0,0,0,0.1);
+        }
+
+        .ear {
+            width: 35px;
+            height: 35px;
+            background: #b5651d;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+        }
+
+        .ear.left { left: 5px; }
+        .ear.right { right: 5px; }
+
+        .ear-inner {
+            width: 20px;
+            height: 20px;
+            background: #ffb7b2;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+
+        .eye {
+            width: 10px;
+            height: 12px;
+            background: #222;
+            border-radius: 50%;
+            position: absolute;
+            top: 35px;
+            animation: blink 4s infinite;
+        }
+
+        .eye.left { left: 28px; }
+        .eye.right { right: 28px; }
+
+        @keyframes blink {
+            0%, 96%, 98% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+
+        .snout {
+            width: 45px;
+            height: 30px;
+            background: #fcd5ce;
+            border-radius: 50%;
+            position: absolute;
+            top: 48px;
+            left: 28px;
+        }
+
+        .nose {
+            width: 14px;
+            height: 10px;
+            background: #222;
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+            left: 15.5px;
+        }
+
+        .blush {
+            width: 15px;
+            height: 8px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            opacity: 0.6;
+        }
+
+        .blush.left { left: 12px; }
+        .blush.right { right: 12px; }
+
+        .heart-float {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 24px;
+            animation: floatHeart 1.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-8px) scale(1.2); }
+        }
+
+        h1 {
+            color: #d90429;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            min-height: 50px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 22px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #2ec4b6;
+            color: white;
+            box-shadow: 0 4px 10px rgba(46, 196, 182, 0.4);
+            z-index: 2;
+        }
+
+        #noBtn {
+            background-color: #e71d36;
+            color: white;
+            box-shadow: 0 4px 10px rgba(231, 29, 54, 0.4);
+            transition: 0.15s ease;
+        }
+
+        .hidden-message {
+            display: none;
+            margin-top: 15px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .hidden-message h2 {
+            color: #38b000;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .hidden-message p {
+            color: #333;
+            font-size: 13px;
+        }
+
+        .wa-btn {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContainer">
+        <div class="bear-container">
+            <div class="ear left"><div class="ear-inner"></div></div>
+            <div class="ear right"><div class="ear-inner"></div></div>
+            <div class="bear-face">
+                <div class="blush left"></div>
+                <div class="blush right"></div>
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="snout">
+                    <div class="nose"></div>
+                </div>
+            </div>
+            <div class="heart-float">💖</div>
+        </div>
+
+        <h1>Pehle Toh Sorry Meri Jaan! 🥺</h1>
+        <p>Pichle 3-4 din se tumhe time nahi de paya, mujhe pata hai tum naraz ho aur akela feel kar rahi ho. Sach mein bohot busy tha, par mera dil tumhare paas hi tha. Mujhko maaf karogi na? 💕</p>
+
+        <div class="buttons" id="btnGroup">
+            <button id="yesBtn" onclick="acceptApology()">Haan, Maaf Kiya! 🥰</button>
+            <button id="noBtn" ontouchstart="moveButton()" onmouseover="moveButton()" onclick="moveButton()">Nahi! 😤</button>
+        </div>
+
+        <div class="hidden-message" id="successMsg">
+            <h2>Yayyy! I Love You So Much! ❤️</h2>
+            <p>Pata hai mujhe meri gudiya gussa zaroor hoti hai par dil se bohot achi hai. Ab jaldi se WhatsApp par mujhe batao!</p>
+            <a id="whatsappLink" href="#" target="_blank" class="wa-btn">Send Message on WhatsApp 💬</a>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.floor(Math.random() * 140) - 70;
+            const y = Math.floor(Math.random() * 80) - 40;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function acceptApology() {
+            document.getElementById('btnGroup').style.display = 'none';
+            document.getElementById('successMsg').style.display = 'block';
+            document.querySelector('h1').innerText = "Thank You Meri Jaan! 😍";
+            document.querySelector('p').style.display = 'none';
+
+            // WhatsApp number bina '+' ke yahan set kar diya hai
+            const myPhoneNumber = "923211430121"; 
+            const encodedMessage = encodeURIComponent("Maine aapko maaf kar diya hai! ❤️ Aur website bohot cute thi! 🥰");
+            
+            document.getElementById('whatsappLink').href = `https://wa.me/${myPhoneNumber}?text=${encodedMessage}`;
+        }
+    </script>
+
+</body>
+</html>
